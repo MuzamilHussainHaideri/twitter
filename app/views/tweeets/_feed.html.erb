@@ -1,5 +1,3 @@
-
-
 <div class="column is-half">
   <% if user_signed_in? %>
 	<article class="media box">
@@ -20,7 +18,7 @@
   	<article class="media">
   		<div class="media-left">
   			<figure class="image is-64x64">
-  				<%= gravatar_image_tag(tweeet.user.email, size: 64, alt: tweeet.user.name) %>
+  				<%= gravatar_image_tag(tweeet.user.try(:email) , size: 64, alt: tweeet.user.name) %>
   			</figure>
   		</div>
   		<div class="media-content">
@@ -49,4 +47,3 @@
   </div>
 <% end %>
 </div>
-
